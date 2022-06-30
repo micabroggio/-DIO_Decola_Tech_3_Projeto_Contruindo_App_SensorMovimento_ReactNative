@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     const subscription = RNShake.addListener(()=>{
-      setToggle(oldToggle => !oldToggle)
+      setToggle(oldToggle => !oldToggle);      
     });
     return () => subscription.remove();
   }, []);
@@ -25,13 +25,13 @@ const App = () => {
       <Image
         style = {style.lightOnLogo}
         source = {toggle 
-          ? require('C:/Users/micao/OneDrive/dev_git/projetos_decola_tech/01/flashApp/assets/icons/logo_branco.png') 
+          ? require('./assets/icons/logo_branco.png') 
           : require('./assets/icons/logo_preto.png')}
       />
       <Image
         style = {style.lightOn}
         source = {toggle 
-          ? require('C:/Users/micao/OneDrive/dev_git/projetos_decola_tech/01/flashApp/assets/icons/on.png') 
+          ? require('./assets/icons/on.png') 
           : require('./assets/icons/off.png')}
       />
     </TouchableOpacity>
@@ -43,24 +43,22 @@ export default App;
 const style = StyleSheet.create({
   container:{
     flex:1,
-    padding: 20,
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
   containerLight:{
     flex:1,
-    padding: 20,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
   lightOn:{
-    width: 400,
-    height: 400,
     resizeMode: 'contain',
     alignSelf: 'center',
     justifyContent:'center',
+    width: 400,
+    height: 400,
   },
   lightOnLogo:{
     resizeMode: 'contain',
